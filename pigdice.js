@@ -38,4 +38,4 @@ function pigdiceStart(){
 	}
 }
 
-pigdiceStart();
+pigdiceStart();  
