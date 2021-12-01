@@ -24,14 +24,40 @@
 </head>
 
 <body>
-    <button>1번 Player</button> <span class="num1">점수</span>
+    <button onclick="diceThrow(0)">1번 Player</button> <span class="num1">점수</span>
     <br>
-    <button>2번 Player</button> <span class="num2">점수</span>
+    <button onclick="diceThrow(1)">2번 Player</button> <span class="num2">점수</span>
     <br>
-    <button>3번 Player</button> <span class="num3">점수</span>
+    <button onclick="diceThrow(2)">3번 Player</button> <span class="num3">점수</span>
     <br>
-    <button>4번 Player</button> <span class="num4">점수</span>
+    <button onclick="diceThrow(3)">4번 Player</button> <span class="num4">점수</span>
     <br>
-    <button>5번 Player</button> <span class="num5">점수</span>
+    <button onclick="diceThrow(4)">5번 Player</button> <span class="num5">점수</span>
+
+    <script>
+
+        let pointArray=[0,0,0,0,0];
+        
+        function diceThrow(num){
+            let num2=num+1;
+            let point=Math.floor(Math.random()*6+1);
+            
+            if(point===1){
+                if(pointArray[num]===0){
+                    pointArray[num]=0;
+                    document.querySelector(".num"+num2).innerText+=" 그대로 0점 ㅜㅜ"
+                }else{
+                    pointArray[num]=0;
+                document.querySelector(".num"+num2).innerText="꽝!! 점수를 잃었습니다."
+                }
+            }else if(point>=100){
+                document.querySelector(".num"+num2).innerText="축하합니다!! 100점을 채웠습니다."
+            }else{
+                pointArray[num]+=point;
+                document.querySelector(".num"+num2).innerText=pointArray[num];
+            }
+            console.log(pointArray)
+        }
+        </script>
 </body>
 </html>
