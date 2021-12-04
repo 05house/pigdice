@@ -9,5 +9,22 @@
   <body>
     <button>play</button>
     <span></span>
+
+    <script>
+      const button = document.querySelector("button");
+      const result = document.querySelector("span");
+
+      let score = 0;
+
+      function pigDice(event) {
+        const point = Math.floor(Math.random() * 6 + 1);
+        if (point === 1) {
+          score = 0;
+          result.innerText = "0점입니다";
+        }
+      }
+
+      button.addEventListener("click", pigDice);
+    </script>
   </body>
 </html>
