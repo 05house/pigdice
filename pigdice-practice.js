@@ -1,8 +1,3 @@
-function rand(){
-	return Math.floor(Math.random()*6)+1;
-}
-
-
 let score = [];
 let randNum = 0;
 let totalPlayer = 2;
@@ -14,6 +9,10 @@ for(let i=0; i < totalPlayer; i++){
 
 const allButtonEl = document.querySelectorAll('button');
 
+function rand(){
+	return Math.floor(Math.random()*6)+1;
+}
+
 function buttonLock(target){
 	target.disabled = true;
 }
@@ -24,19 +23,23 @@ function buttonUnlock(){
 	});	
 }
 
-function newGame(){
+function newGame(used){
 	const allPlayerCountEl = document.querySelectorAll('.player_group li .count');
 	allPlayerCountEl.forEach(function (allPlayerCountEl) {
     allPlayerCountEl.innerText = 0;
   });
 	const diceEl = document.querySelector('.dice span');
 	diceEl.innerText = 0;
+	
+	for(let i=0; i < totalPlayer; i++){
+		score[i] = 0;
+	}
 }
 
 
-function playTurnChange(hold){	
+function playTurnChange(btn){	
 	const currentPlayerCountEl = document.querySelector('.player_group li.active .count');
-	if(!hold){
+	if(btn !== 'hold'){
 		score[currentPlayer - 1] = 0;
 		currentPlayerCountEl.innerText = 0;
 	}
