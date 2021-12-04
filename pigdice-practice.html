@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pigdice</title>
+  </head>
+  <body>
+    <button>play</button>
+    <span></span>
+
+    <script>
+      const button = document.querySelector("button");
+      const result = document.querySelector("span");
+
+      let score = 0;
+
+      function pigDice(event) {
+        const point = Math.floor(Math.random() * 6 + 1);
+        if (point === 1) {
+          score = 0;
+          result.innerText = "0점입니다";
+        } else if (score >= 100) {
+          result.innerText = "100점 달성!!!";
+        } else {
+          score += point;
+          result.innerText = `득점: ${point} 총점 : ${score}`;
+        }
+      }
+
+      button.addEventListener("click", pigDice);
+    </script>
+  </body>
+</html>
