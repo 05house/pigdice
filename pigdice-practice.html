@@ -21,6 +21,8 @@
         if (point === 1) {
           score = 0;
           result.innerText = "0점입니다";
+        } else if (score >= 100) {
+          result.innerText = "100점 달성!!!";
         }
       }
 
