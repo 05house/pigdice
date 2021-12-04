@@ -23,7 +23,7 @@ function buttonUnlock(){
 	});	
 }
 
-function newGame(used){
+function newGame(){
 	const allPlayerCountEl = document.querySelectorAll('.player_group li .count');
 	allPlayerCountEl.forEach(function (allPlayerCountEl) {
     allPlayerCountEl.innerText = 0;
@@ -34,12 +34,13 @@ function newGame(used){
 	for(let i=0; i < totalPlayer; i++){
 		score[i] = 0;
 	}
+	playerActive(1);
 }
 
 
-function playTurnChange(btn){	
+function playTurnChange(hold){	
 	const currentPlayerCountEl = document.querySelector('.player_group li.active .count');
-	if(btn !== 'hold'){
+	if(hold !== 'hold'){
 		score[currentPlayer - 1] = 0;
 		currentPlayerCountEl.innerText = 0;
 	}
@@ -50,7 +51,14 @@ function playTurnChange(btn){
 		currentPlayer = 1;
 	}
 
-	const nextPlayerEl = document.querySelector('.player_group li:nth-child(' + currentPlayer + ')');
+	playerActive(currentPlayer);
+
+	buttonUnlock();
+	
+}
+
+function playerActive(num){
+	const nextPlayerEl = document.querySelector('.player_group li:nth-child(' + num + ')');
 	const allPlayerEl = document.querySelectorAll('.player_group li');
 
 	allPlayerEl.forEach(function (playerEl) {
@@ -58,9 +66,6 @@ function playTurnChange(btn){
   });
 
 	nextPlayerEl.classList.add('active');
-
-	buttonUnlock();
-	
 }
 
 function scoreChange(randNum){
@@ -70,15 +75,11 @@ function scoreChange(randNum){
 	const currentPlayerCountEl = document.querySelector('.player_group li.active .count');
 	currentPlayerCountEl.innerText = score[currentPlayer - 1];
 
-	if(score[currentPlayer - 1] >= 100){
+	if(score[currentPlayer - 1] >= 100){	
 		alert(currentPlayer + '번 플레이어 승리!!!');
-
-		delay(function(){
-			newGame();
-		},300);
-		
+		newGame();	
 	}
-
+	
 	buttonUnlock();
 }
 
