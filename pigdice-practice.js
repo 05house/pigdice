@@ -1,10 +1,12 @@
-function rollDice(){
+const button = document.querySelector('button')
+
+function rollDice (){
 	return Math.floor(Math.random()*6)+1;
 }
 
 let score = 0
 
-function gameStart() {
+function gameStart () {
 	while (score < 100) {
 		diceNum = rollDice()
 		score += diceNum
@@ -23,4 +25,4 @@ function gameStart() {
 	}
 }
 
-gameStart()
+button.addEventListener('click', gameStart)
