@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pigdice practice</title>
+  <style>
+    * {margin:0; padding:0}
+    li {list-style: none;}
+    body {padding-top:100px;}
+    a {text-decoration: none;}
+
+    .wrap{text-align: center;}
+    .dice{font-size:30px;margin-top:30px;}
+    ul{margin: 20px 0;}
+    ul > li{display:inline-block;padding: 10px;}
+    ul > li.active{color:red;}
+    .player{font-size: 18px;}
+    .count{font-size:30px;}
+    button{padding: 10px 15px;margin:0 5px;}
+    .new_game{padding:5px 5px;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <button class="new_game">NEW GAME</button>
+    <div class="dice">주사위 숫자 6</div>
+    <ul>
+      <li class="active">
+        <div class="player">player 1</div>
+        <div class="count">0</div>
+      </li>
+      <li>
+        <div class="player">player 2</div>
+        <div class="count">0</div>
+      </li>
+    </ul>
+    <button class="roll_dice">ROLL DICE</button>
+    <button class="hold">HOLD</button>
+    
+  </div>
+  
+</body>
+</html>
