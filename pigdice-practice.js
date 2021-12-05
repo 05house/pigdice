@@ -112,7 +112,7 @@ function pigdiceStart(){
 			}else{
 				delay(function(){
 					scoreChange(randNum, function(playerNum){
-						alert(playerNum + '번 플레이어 승리!!!');
+						alert(playerNum + '번 플레이어 승리!');
 						buttonUnlock();
 						newGame();
 					});
