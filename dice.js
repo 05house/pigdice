@@ -13,6 +13,9 @@ function palaying(){
     total = totalScore += randice();
     console.log(`합은${total}입니다.`);
   }
+  else{
+    console.log("다음 기회에");
+  }
 };
 
 palaying();
