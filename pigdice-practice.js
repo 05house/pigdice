@@ -66,9 +66,10 @@ function playerActive(num){
   });
 
 	nextPlayerEl.classList.add('active');
+	currentPlayer = num;
 }
 
-function scoreChange(randNum){
+function scoreChange(randNum, callback){
 	playerScore = score[currentPlayer - 1];
 	score[currentPlayer - 1] = playerScore + randNum;
 
@@ -76,11 +77,14 @@ function scoreChange(randNum){
 	currentPlayerCountEl.innerText = score[currentPlayer - 1];
 
 	if(score[currentPlayer - 1] >= 100){	
-		alert(currentPlayer + '번 플레이어 승리!!!');
-		newGame();	
+		delay(function(){
+			callback(currentPlayer);
+		},300);
+			
+	}else{
+		buttonUnlock();
 	}
 	
-	buttonUnlock();
 }
 
 function delay(callback, time){
@@ -107,7 +111,11 @@ function pigdiceStart(){
 				},300);
 			}else{
 				delay(function(){
-					scoreChange(randNum);
+					scoreChange(randNum, function(playerNum){
+						alert(playerNum + '번 플레이어 승리!!!');
+						buttonUnlock();
+						newGame();
+					});
 				},200);
 			}
 
