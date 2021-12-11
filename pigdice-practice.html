@@ -21,14 +21,15 @@
     .count{font-size:30px;}
     button{padding: 10px 15px;margin:0 5px;}
     .new_game{margin-left:20px;}
-    .btn_add{padding:5px 10px;}
-    .btn_del{padding:5px 10px;}
+    .player_add{padding:5px 10px;}
+    .player_del{padding:5px 10px;}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <span>PLAYER 2명</span>
-    
+    <div class="player">PLAYER <span>2</span>명</div>
+    <button class="player_del">-</button>
+    <button class="player_add">+</button>
     <div class="dice">주사위 숫자 <span>0</span></div>
     <ul class="player_group">
       <li class="active">
