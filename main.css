@@ -1,0 +1,17 @@
+/* common */
+* {margin:0; padding:0}
+li {list-style: none;}
+body {padding-top:100px;}
+a {text-decoration: none;}
+
+.wrap{text-align: center;}
+.dice{font-size:30px;margin-top:30px;}
+ul{margin: 20px 0;}
+ul > li{display:inline-block;padding: 10px;}
+ul > li.active{color:rgb(116, 180, 125);}
+.player{font-size: 18px;}
+.count{font-size:30px;}
+button{padding: 10px 15px;margin:0 5px;}
+.new_game{margin-left:20px;}
+.btn_add{padding:5px 10px;}
+.btn_del{padding:5px 10px;}
