@@ -1,101 +1,38 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>pigdice practice</title>
     <link rel="icon" href="./favicon.png" />
+    <link rel="stylesheet" href="./main.css">
     <script defer src="./pigdice-practice.js"></script>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
-      li {
-        list-style: none;
-      }
-      body {
-        padding-top: 100px;
-      }
-      a {
-        text-decoration: none;
-      }
+  
+</head>
 
-      .wrap {
-        text-align: center;
-      }
-      .dice {
-        font-size: 30px;
-        margin-top: 30px;
-      }
-      ul {
-        margin: 20px 0;
-      }
-      ul > li {
-        display: inline-block;
-        padding: 10px;
-      }
-      ul > li.active {
-        color: red;
-      }
-      .player {
-        font-size: 18px;
-      }
-      .count {
-        font-size: 30px;
-      }
-      button {
-        padding: 10px 10px;
-      }
-      .align_btn {
-        width: 200px;
-        margin: 0 auto;
-      }
-      .roll_dice,
-      .hold {
-        display: inline-block;
-        width: 95px;
-        margin-bottom: 15px;
-      }
-      .roll_dice {
-        float: left;
-      }
-      .hold {
-        float: right;
-      }
-      .new_game {
-        display: block;
-        width: 100%;
-      }
-      .btn_add {
-        padding: 5px 10px;
-      }
-      .btn_del {
-        padding: 5px 10px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="wrap">
-      <span>PLAYER 2명</span>
-
-      <div class="dice">주사위 숫자 <span>0</span></div>
-      <ul class="player_group">
-        <li class="active">
-          <div class="play_num">PLAYER 1</div>
-          <div class="count">0</div>
-        </li>
-        <li>
-          <div class="play_num">PLAYER 2</div>
-          <div class="count">0</div>
-        </li>
-      </ul>
-      <div class="align_btn">
-        <button class="roll_dice">ROLL DICE</button>
-        <button class="hold">HOLD</button>
-        <button class="new_game">NEW GAME</button>
-      </div>
-    </div>
-  </body>
+<body>
+  <div class="wrap">
+    <div class="player">PLAYER <span>2</span>명</div>
+    <button class="player_del">-</button>
+    <button class="player_add">+</button>
+    <div class="dice">주사위 숫자 <span>0</span></div>
+    <ul class="player_group">
+      <li class="active">
+        <div class="play_num">PLAYER 1</div>
+        <div class="count">0</div>
+      </li>
+      <li>
+        <div class="play_num">PLAYER 2</div>
+        <div class="count">0</div>
+      </li>
+    </ul>
+    <button class="roll_dice">ROLL DICE</button>
+    <button class="hold">HOLD</button>
+    <button class="new_game">NEW GAME</button>
+    
+  </div>
+  
+</body>
 </html>
